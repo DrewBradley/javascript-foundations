@@ -1,8 +1,6 @@
 class Hobbit {
-    constructor(name, rider, color) {
+    constructor(name) {
       this.name = name;
-      this.rider = rider;
-      this.color = color;
       this.age = 0;
       this.adult = true;
       this.old = false;
@@ -17,6 +15,11 @@ class Hobbit {
         }else if (this.age > 100){
             this.old = true;
         }
+    }
+    timeTravel(num, hobbit) {
+        for (var i = 0; i < num; i++) {
+          hobbit.celebrateBirthday();
+        };
     }
 
 }

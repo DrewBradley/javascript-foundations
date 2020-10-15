@@ -21,16 +21,17 @@ describe('Hobbit', function() {
   
   it('should be able to have a different name', function() {
     // create a variable hobbit whose value is an instance of the Hobbit class (pass in your name as an argument)
-    var bilbo = new Hobbit('Drew');
+    var drew = new Hobbit('Drew');
     
     // assert that hobbit.name is equal to your name
-    assert.equal(bilbo.name, 'Drew')
+    assert.equal(drew.name, 'Drew')
   });
 
   it('should start out 0 years old', function() {
     // create a variable hobbit whose value is an instance of the Hobbit class (pass in whatever name you want)
-
+    var elfo = new Hobbit('Elfo')
     // assert that hobbit.age is 0
+    assert.equal(elfo.age, 0)
   });
 
   it('should gain 1 year after every birthday', function() {
@@ -43,16 +44,10 @@ describe('Hobbit', function() {
     assert.equal(hobbit.age, 3);
   });
 
-  function timeTravel(num, hobbit) {
-    for (var i = 0; i < num; i++) {
-      hobbit.celebrateBirthday();
-    };
-  };
-
   it('should be considered a child at the age of 32', function() {
     var hobbit = new Hobbit('Taylor');
 
-    timeTravel(32, hobbit);
+    hobbit.timeTravel(32, hobbit);
 
     assert.equal(hobbit.age, 32);
     assert.equal(hobbit.adult, false);
@@ -61,7 +56,7 @@ describe('Hobbit', function() {
   it('should be considered an adult at 33', function() {
     var hobbit = new Hobbit('Taylor');
 
-    timeTravel(33, hobbit);
+    hobbit.timeTravel(33, hobbit);
 
     assert.equal(hobbit.age, 33);
     assert.equal(hobbit.adult, true);
@@ -72,7 +67,7 @@ describe('Hobbit', function() {
 
     assert.equal(hobbit.old, false)
 
-    timeTravel(100, hobbit);
+    hobbit.timeTravel(100, hobbit);
 
     assert.equal(hobbit.old, false)
 
